@@ -1,7 +1,8 @@
-from contextvars import Context
 from datetime import datetime
-from pipes import Template
 from django.http import HttpResponse 
+from django.template import Context
+from django.template import Template
+
 
 def saludo(request):
     return HttpResponse("Hola Django - Coder")
@@ -20,7 +21,7 @@ def diaDeHoy(request):
 
 def template(self):
     
-    miHtml = open("C:/Users/monto/OneDrive/Escritorio/DjangoClases/djangoclases/djangoclases/plantilla/template.html")
+    miHtml = open(r'C:/Users/monto/OneDrive/Escritorio/DjangoClases/djangoclases/djangoclases/plantilla/template.html', 'r')
     
     plantilla = Template(miHtml.read())
     
