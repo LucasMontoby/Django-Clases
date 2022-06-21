@@ -16,10 +16,9 @@ def segunda_vista(request):
 def diaDeHoy(request):
     dia = datetime.now()
     documentoDeTexto =f"Hoy es dia: <br> {dia}"
-    
     return HttpResponse(documentoDeTexto)
 
-# V1
+# V1 (versión vieja de renderizar las vistas)
 #def template(request):
     
 #    miHtml = open(r'C:/Users/monto/OneDrive/Escritorio/DjangoClases/djangoclases/djangoclases/plantilla/template.html', 'r')
@@ -35,7 +34,7 @@ def diaDeHoy(request):
 #    return HttpResponse(documento)
 
     
-# V2
+# V2 (Versión nueva de renderizar las vistas)
 def template(request):
     
     plantilla = loader.get_template("template.html")
