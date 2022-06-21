@@ -54,7 +54,7 @@ ROOT_URLCONF = 'djangoclases.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [r"C:\Users\monto\OneDrive\Escritorio\DjangoClases\djangoclases\djangoclases\plantilla"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

@@ -1,7 +1,8 @@
 from datetime import datetime
+from unittest import loader
 from django.http import HttpResponse 
 from django.template import Context
-from django.template import Template
+from django.template import Template, loader
 
 
 def saludo(request):
@@ -18,17 +19,29 @@ def diaDeHoy(request):
     
     return HttpResponse(documentoDeTexto)
 
+# V1
+#def template(request):
+    
+#    miHtml = open(r'C:/Users/monto/OneDrive/Escritorio/DjangoClases/djangoclases/djangoclases/plantilla/template.html', 'r')
+    
+#    plantilla = Template(miHtml.read())
+    
+#    miHtml.close()
+    
+#    miContexto = Context()
+    
+#    documento = plantilla.render(miContexto)
+    
+#    return HttpResponse(documento)
 
-def template(self):
     
-    miHtml = open(r'C:/Users/monto/OneDrive/Escritorio/DjangoClases/djangoclases/djangoclases/plantilla/template.html', 'r')
+# V2
+def template(request):
     
-    plantilla = Template(miHtml.read())
+    plantilla = loader.get_template("template.html")
+
+    nombre = "Momia"
     
-    miHtml.close()
+    render1 = plantilla.render({"nombre" : nombre})
     
-    miContexto = Context()
-    
-    documento = plantilla.render(miContexto)
-    
-    return HttpResponse(documento)
+    return HttpResponse(render1)
